@@ -12,4 +12,5 @@ This is the submissions repository for the Robotics NanoDegree(ND-209) course at
     cmake .. 
     make
     export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/Udacity-Robotics-ND/Build-My-Work/build
+    export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/Udacity-Robotics-ND/Build-My-Work/model
     ```
