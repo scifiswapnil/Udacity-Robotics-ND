@@ -3,6 +3,7 @@ This is the submissions repository for the Robotics NanoDegree(ND-209) course at
 
 ### Folder contents
 * [Build-My-World](https://github.com/scifiswapnil/Udacity-Robotics-ND/tree/master/Build-My-World)
+* [Go-Chase-It](https://github.com/scifiswapnil/Udacity-Robotics-ND/tree/master/Go-Chase-It)
 
 ### Installation 
 * Build-My-world 
@@ -13,4 +14,13 @@ This is the submissions repository for the Robotics NanoDegree(ND-209) course at
     make
     export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/Udacity-Robotics-ND/Build-My-Work/build
     export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/Udacity-Robotics-ND/Build-My-Work/model
+    ```
+* Go-Chase-It
+    ```
+    cd ~/Udacity-Robotics-ND/Go-Chase-It/catkin_ws
+    catkin_make
+    source devel/setup.bash
+    export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/Udacity-Robotics-ND/Go-Chase-It/catkin_ws/src/my_robot/models/
+    roslaunch my_robot world.launch
+    roslaunch ball_chaser ball_chaser.launch
     ```

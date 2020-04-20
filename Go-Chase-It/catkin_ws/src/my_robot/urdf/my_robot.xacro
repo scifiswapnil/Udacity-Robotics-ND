@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
+
+    <xacro:include filename="$(find my_robot)/urdf/interia.xacro" />
+    <xacro:include filename="$(find my_robot)/urdf/wheels.xacro" />
+    <xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
+    <xacro:property name="PI" value="3.14"/>
+
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${PI/2}"/>
+            <mass value="10.0"/>
+            <box_inertia m="10.0" x="0.3" y="0.2" z="0.2" />
+        </inertial>
+        <visual name="base_link">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${PI/2}"/>
+            <geometry>
+                <mesh filename="package://my_robot/meshes/chasis.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1.0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision name="base_link">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${PI/2}"/>
+            <geometry>
+                <mesh filename="package://my_robot/meshes/chasis.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="hokuyo_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.5"/>
+            <box_inertia m="0.5" x="0.08" y="0.08" z="0.18" />
+        </inertial>
+        <visual name="hokuyo_link">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://my_robot/meshes/hokuyo.dae" scale="1 1 1"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1.0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision name="hokuyo_link">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://my_robot/meshes/hokuyo.dae" scale="1 1 1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="laser_link" />
+
+    <link name="camera_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.5"/>
+            <box_inertia m="0.5" x="0.08" y="0.08" z="0.18" />
+        </inertial>
+        <visual name="camera_link">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://my_robot/meshes/board_camera.dae" scale="1 1 1"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1.0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision name="camera_link">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://my_robot/meshes/board_camera.dae" scale="1 1 1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="laser_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.025" rpy="0.0 0.0 0.0"/>
+        <parent link="hokuyo_link"/>
+        <child link="laser_link"/>
+    </joint>
+
+    <joint name="hokuyo_joint" type="fixed">
+        <origin xyz="0.115 0.0 0.07" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="hokuyo_link"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="0.17 0.0 0.02" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="camera_link"/>
+        <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <wheel name="left_front" x="0.12" y="0.08" yaw="${PI/2}"/>
+    <wheel name="left_back" x="-0.12" y="0.08" yaw="${PI/2}"/>
+    <wheel name="right_front" x="0.12" y="-0.08" yaw="-${PI/2}"/>
+    <wheel name="right_back" x="-0.12" y="-0.08" yaw="-${PI/2}"/>
+
+</robot>
