@@ -2,12 +2,12 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot_wheels">
 
-    <xacro:property name="wheel_kp" value="1000.0" />
-    <xacro:property name="wheel_kd" value="10.0" />
-    <xacro:property name="wheel_mu1" value="0.9" />
-    <xacro:property name="wheel_mu2" value="0.9" />
-    <xacro:property name="wheel_slip1" value="0.1" />
-    <xacro:property name="wheel_slip2" value="0.1" />
+    <xacro:property name="wheel_kp" value="1000000.0" />
+    <xacro:property name="wheel_kd" value="1000.0" />
+    <xacro:property name="wheel_mu1" value="1.0" />
+    <xacro:property name="wheel_mu2" value="1.0" />
+    <xacro:property name="wheel_slip1" value="0.01" />
+    <xacro:property name="wheel_slip2" value="0.05" />
 
     <macro name="wheel" params="name x y yaw">
 
@@ -15,7 +15,7 @@
             <inertial>
                 <mass value="1.0"/>
                 <origin xyz="0.0 0 0" rpy="1.57 0 ${yaw}"/>
-                <inertia ixx="1e-3" ixy="0" ixz="0" iyy="1e-3" iyz="0" izz="1e-3" />
+                <inertia ixx="1e-2" ixy="0" ixz="0" iyy="1e-2" iyz="0" izz="1e-2" />
             </inertial>
             <collision name="${name}_wheel_collision">
                 <origin xyz="0 0 0" rpy="1.57 0 ${yaw}"/>
@@ -47,8 +47,8 @@
             <parent link="base_link"/>
             <child link="${name}_wheel"/>
             <axis xyz="0.0 1.0 0.0" rpy = "0 0 0" />
-            <limit effort="100" velocity="100"/>
-            <joint_properties damping="1.0" friction="1.0"/>
+            <limit effort="10" velocity="1"/>
+            <joint_properties damping="0.8" friction="1.0"/>
         </joint>
 
 

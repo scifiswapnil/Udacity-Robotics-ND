@@ -18,23 +18,23 @@ my_robot:
     joint: right_back_wheel_joint
 
       
-  gazebo_ros_control:
-    pid_gains:
-      left_front_wheel_joint:
-        p: 1000.0 
-        i: 0.01
-        d: 100.0
-      left_back_wheel_joint:
-        p: 1000.0 
-        i: 0.01
-        d: 100.0
-      right_front_wheel_joint:
-        p: 1000.0 
-        i: 0.01
-        d: 100.0
-      right_back_wheel_joint:
-        p: 1000.0 
-        i: 0.01
-        d: 100.0
+gazebo_ros_control:
+  pid_gains:
+    left_front_wheel_joint:
+      p: 80.0 
+      i: 0.01
+      d: 8.0
+    left_back_wheel_joint:
+      p: 80.0 
+      i: 0.01
+      d: 8.0
+    right_front_wheel_joint:
+      p: 80.0 
+      i: 0.01
+      d: 8.0
+    right_back_wheel_joint:
+      p: 80.0 
+      i: 0.01
+      d: 8.0
 
 

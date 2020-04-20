@@ -3,7 +3,9 @@
 
     <gazebo>
         <plugin filename="libgazebo_ros_control.so" name="ros_control">
+	<static>false</static>
         <robotNamespace>/my_robot</robotNamespace>
+        <legacyModeNS>true</legacyModeNS>
         </plugin>
     </gazebo>
 
@@ -18,8 +20,8 @@
             <wheelSeparation>0.2</wheelSeparation>
             <wheelDiameter>0.1</wheelDiameter>
             <robotBaseFrame>base_link</robotBaseFrame>
-            <torque>200</torque>
-            <MaxForce>5.0</MaxForce>
+            <torque>150</torque>
+            <MaxForce>3.0</MaxForce>
             <commandTopic>cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <odometryFrame>odom</odometryFrame>
