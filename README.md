@@ -50,7 +50,7 @@ This is the submissions repository for the Robotics NanoDegree(ND-209) course at
     
 * Where-Am-I
 
-**Note** : Install the dependencies using following command 
+   **Note** : Install the dependencies using following command 
     ```
     sudo apt-get install libignition-math2-dev protobuf-compiler ros-kinetic-navigation ros-kinetic-map-server ros-kinetic-move-base ros-kinetic-amcl
     ```
