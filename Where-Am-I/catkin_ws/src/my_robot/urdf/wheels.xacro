@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot_wheels">
+
+    <xacro:property name="wheel_kp" value="10000000.0" />
+    <xacro:property name="wheel_kd" value="1000.0" />
+    <xacro:property name="wheel_mu1" value="1" />
+    <xacro:property name="wheel_mu2" value="1" />
+    <xacro:property name="wheel_slip1" value="0.8" />
+    <xacro:property name="wheel_slip2" value="0.0" />
+
+    <macro name="wheel" params="name x y yaw">
+
+        <link name="${name}_wheel">
+            <inertial>
+                <mass value="0.4"/>
+                <origin xyz="0.0 0 0" rpy="1.57 0 ${yaw}"/>
+                <inertia ixx="1e-3" ixy="0" ixz="0" iyy="1e-3" iyz="0" izz="1e-3" />
+            </inertial>
+            <collision name="${name}_wheel_collision">
+                <origin xyz="0 0 0" rpy="1.57 0 ${yaw}"/>
+                <geometry>
+                    <mesh filename="package://my_robot/meshes/wheel.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+                <surface>
+                    <friction>
+                        <fdir1>1 0 0</fdir1>
+                        <kp>${wheel_kp}</kp>
+                        <kd>${wheel_kd}</kd>
+                        <mu>${wheel_mu1}</mu>
+                        <mu2>${wheel_mu2}</mu2>
+                        <!-- <slip1>${wheel_slip1}</slip1>
+                        <slip2>${wheel_slip2}</slip2>-->
+                    </friction>
+                </surface>
+            </collision>
+            <visual name="${name}_wheel_visual">
+                <origin xyz="0 0 0" rpy="1.57 0 ${yaw}"/>
+                <geometry>
+                    <mesh filename="package://my_robot/meshes/wheel.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <joint name="${name}_wheel_joint" type="continuous">
+            <origin xyz="${x} ${y} 0.02" rpy="0.0 0.0 0.0"/>
+            <parent link="base_link"/>
+            <child link="${name}_wheel"/>
+            <axis xyz="0.0 1.0 0.0" rpy = "0 0 0" />
+            <limit effort="10" velocity="1"/>
+            <joint_properties damping="0.8" friction="1.0"/>
+        </joint>
+
+
+        <transmission name="${name}_wheel_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="${name}_wheel_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="${name}_wheel_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+    </macro>
+</robot>

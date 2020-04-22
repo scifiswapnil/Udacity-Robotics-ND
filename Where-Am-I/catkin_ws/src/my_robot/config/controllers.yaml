@@ -1,0 +1,40 @@
+my_robot:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  left_front_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_front_wheel_joint
+  left_back_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: left_back_wheel_joint
+  right_front_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_front_wheel_joint
+  right_back_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_back_wheel_joint
+
+      
+gazebo_ros_control:
+  pid_gains:
+    left_front_wheel_joint:
+      p: 80.0 
+      i: 0.01
+      d: 8.0
+    left_back_wheel_joint:
+      p: 80.0 
+      i: 0.01
+      d: 8.0
+    right_front_wheel_joint:
+      p: 80.0 
+      i: 0.01
+      d: 8.0
+    right_back_wheel_joint:
+      p: 80.0 
+      i: 0.01
+      d: 8.0
+
+
