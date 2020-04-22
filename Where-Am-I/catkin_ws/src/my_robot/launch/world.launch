@@ -10,7 +10,7 @@
         <arg name="use_sim_time" value="true"/>
         <arg name="debug" value="false"/>
         <arg name="verbose" value="false"/>
-        <arg name="gui" value="false" />
+        <arg name="gui" value="true" />
         <arg name="world_name" value="$(arg world_file)"/>
     </include>
 
@@ -31,7 +31,7 @@
     <include file="$(find my_robot)/launch/movebase.launch" />
 
     <!-- rviz -->
-    <node name="rviz" pkg="rviz" type="rviz" />
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find my_robot)/rviz/my_robot.rviz" />
 
 </launch>
 

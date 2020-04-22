@@ -55,3 +55,9 @@ This is the submissions repository for the Robotics NanoDegree(ND-209) course at
    source devel/setup.bash
    roslaunch my_robot world.launch
    ```
+   New terminal
+   ```
+   cd ~/Udacity-Robotics-ND/Where-Am-I/catkin_ws
+   source devel/setup.bash
+   roslaunch my_robot teleop.launch
+   ```
