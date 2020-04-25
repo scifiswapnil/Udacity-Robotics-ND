@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <node name="amcl" pkg="amcl" type="amcl" output="screen">
+    <remap from="scan" to="/scan"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="odom_model_type" value="diff"/>
+    <param name="base_frame_id" value="base_link"/>
+    <param name="global_frame_id" value="map"/>
+    <param name="update_min_d" value="0.1" />
+    <param name="update_min_a" value="0.1" />
+    <!-- If you choose to define initial pose here -->
+    <param name="initial_pose_x" value="3"/>
+    <param name="initial_pose_y" value="-3"/>
+    <param name="initial_pose_a" value="-1.57"/>  </node>
+
+</launch>

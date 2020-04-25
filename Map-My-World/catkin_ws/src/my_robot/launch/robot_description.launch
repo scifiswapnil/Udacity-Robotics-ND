@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- Robot pose -->
+  <arg name="initial_pose_x" default="0"/>
+  <arg name="initial_pose_y" default="0"/>
+  <arg name="initial_pose_yaw" default="0"/>
+  <arg name="init_pose" default="-x $(arg initial_pose_x) -y $(arg initial_pose_y) -z 0 -R 0 -P 0 -Y $(arg initial_pose_yaw)" />
+
+  <!-- Find my robot Description-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find my_robot)/urdf/my_robot.xacro'"/>
+
+  <!-- Spawn My Robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="$(arg init_pose) -urdf -model my_robot -param robot_description "/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <remap from="my_robot/joint_states" to="joint_states" />
+  </node>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+
+  <!-- load the controllers -->
+
+  <rosparam file="$(find my_robot)/config/controllers.yaml" command="load"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="my_robot" args="left_front_velocity_controller left_back_velocity_controller right_front_velocity_controller right_back_velocity_controller joint_state_controller"/>
+
+</launch>
+
