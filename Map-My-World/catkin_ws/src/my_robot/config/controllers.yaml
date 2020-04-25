@@ -16,8 +16,6 @@ my_robot:
   right_back_velocity_controller:
     type: velocity_controllers/JointVelocityController
     joint: right_back_wheel_joint
-
-      
 gazebo_ros_control:
   pid_gains:
     left_front_wheel_joint:

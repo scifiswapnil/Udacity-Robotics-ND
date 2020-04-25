@@ -42,8 +42,8 @@
                     <horizontal>
                         <samples>1024</samples>
                         <resolution>1</resolution>
-                        <min_angle>2.094</min_angle>
-                        <max_angle>-2.094</max_angle>
+                        <min_angle>-2.094</min_angle>
+                        <max_angle>2.094</max_angle>
                     </horizontal>
                 </scan>
                 <range>
@@ -93,7 +93,7 @@
                 <pointCloudTopicName>depth/points</pointCloudTopicName>
                 <frameName>/camera_link_optical</frameName>
                 <pointCloudCutoff>0.5</pointCloudCutoff>
-                <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+                <pointCloudCutoffMax>15.0</pointCloudCutoffMax>
                 <distortionK1>0.00000001</distortionK1>
                 <distortionK2>0.00000001</distortionK2>
                 <distortionK3>0.00000001</distortionK3>

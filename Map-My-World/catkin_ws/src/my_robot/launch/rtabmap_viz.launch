@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <arg name="database_path"     default="$(find my_robot)/map/rtabmap.db"/>
+  <arg name="rgb_topic"   default="/my_robot/camera/color/image_raw"/>
+  <arg name="depth_topic" default="/my_robot/camera/depth/image_raw"/>
+  <arg name="camera_info_topic" default="/my_robot/camera/color/camera_info"/>  
+
+
+<!-- visualization with rtabmapviz -->
+    <node pkg="rtabmap_ros" type="rtabmapviz" name="rtabmapviz" args="-d $(find my_robot)/config/rgbd_gui.ini" output="screen">
+        <param name="subscribe_depth"             type="bool" value="true"/>
+        <param name="subscribe_scan"              type="bool" value="true"/>
+        <param name="frame_id"                    type="string" value="base_link"/>
+
+        <remap from="rgb/image"       to="$(arg rgb_topic)"/>
+        <remap from="depth/image"     to="$(arg depth_topic)"/>
+        <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
+        <remap from="scan"            to="/scan"/>
+    </node>
+
+</launch>
