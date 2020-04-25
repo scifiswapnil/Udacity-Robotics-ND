@@ -27,13 +27,13 @@
 
             <!-- RTAB-Map Output -->
             <remap from="grid_map" to="/map"/>
-            <param name="Grid/FromDepth"  type="string" value="true"/>
+            <param name="Grid/FromDepth"  type="string" value="false"/>
 
             <!-- Rate (Hz) at which new nodes are added to map -->
             <param name="Rtabmap/DetectionRate" type="string" value="1"/>
 
             <!-- 2D SLAM -->
-            <param name="Reg/Force3DoF" type="string" value="false"/>
+            <param name="Reg/Force3DoF" type="string" value="true"/>
 
             <!-- Loop Closure Detection -->
             <!-- 0=SURF 1=SIFT 2=ORB 3=FAST/FREAK 4=FAST/BRIEF 5=GFTT/FREAK 6=GFTT/BRIEF 7=BRISK 8=GFTT/ORB 9=KAZE -->
