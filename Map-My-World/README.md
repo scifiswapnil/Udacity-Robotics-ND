@@ -10,25 +10,24 @@ This project is about creating a 2D occupancy grid and 3D octomap from a simulat
 
 ### Folder contents
 
-* [Map-My-World](https://github.com/scifiswapnil/Udacity-Robotics-ND/tree/master/Map-My-World)
-    * catkin_ws 
-        * src 
-            * my_robot - robot model and gazebo world
-                * worlds - contains gazebo world file
-                * models - contains mesh models
-                * maps - Collected maps 
-                * rviz - rviz configuration file
-                * config - pkg configuration files
-                * launch 
-                    * movebase.launch - movebase params and node
-                    * mapserver.launch - mapserver params and node
-                    * amcl.launch - - amcl params and node
-                    * world.launch - primary launch file
-                    * robot_description.launch - robot description
-                    * localization.launch - RTABMAP for localization 
-                    * mappging.launch - RTABMAP for mapping 
-                    * rtabmap_viz.launch - RTABMAP visualizer  
-    * pictures - assignment screenshots
+ * catkin_ws 
+     * src 
+         * my_robot - robot model and gazebo world
+             * worlds - contains gazebo world file
+             * models - contains mesh models
+             * maps - Collected maps 
+             * rviz - rviz configuration file
+             * config - pkg configuration files
+             * launch 
+                 * movebase.launch - movebase params and node
+                 * mapserver.launch - mapserver params and node
+                 * amcl.launch - - amcl params and node
+                 * world.launch - primary launch file
+                 * robot_description.launch - robot description
+                 * localization.launch - RTABMAP for localization 
+                 * mappging.launch - RTABMAP for mapping 
+                 * rtabmap_viz.launch - RTABMAP visualizer  
+ * pictures - assignment screenshots
             
 ### Screenshots 
 
@@ -46,11 +45,11 @@ Basic gazebo World : [Google Drive link](https://drive.google.com/file/d/1-AN5KG
 
 Gazebo World with loops : [Google Drive link](https://drive.google.com/file/d/1ZY6xa8jYTW083mPvd_phDHyVDWCJNyIT/view?usp=sharing)
 
-**Note : Recommended to download the files, rename to rtabmap.db and paste in "~/Udacity-Robotics-ND/Map-My-World/catkin_ws/src/my_robot/map" to avoid changes in launch files**
+**Note :** *Recommended to download the files, rename to rtabmap.db and paste in "~/Udacity-Robotics-ND/Map-My-World/catkin_ws/src/my_robot/map" to avoid changes in launch files*
 
 ### Installation 
 
-**Note : Need to install Dependencies before use** 
+**Note :** *Need to install Dependencies before use.*
 
 Dependencies
 
