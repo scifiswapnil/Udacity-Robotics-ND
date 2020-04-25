@@ -1,43 +1,83 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 # Map My World
-This is the submissions repository for the Robotics NanoDegree(ND-209) course at Udacity. Following you will find folder-wise projects submitted during the course. This is an ongoing course that will continue till May 2020.
+This project is about creating a 2D occupancy grid and 3D octomap from a simulated environment using our own robot with the RTAB-Map package.
 
-# Specification 
-
-* ROS Package containing AMCL, teleop, robot, world and map files
-* Screenshot(s) of localized robot in RViz
-* Student's simulation setup should have the appropriate number of landmarks or geometric features to perform localization.
-* Student's launch file contains all required nodes:
-* Map Server node map_server
-* AMCL node amcl
-* Move Base node move_base
-* The student's program should be able to launch without errors
-* Student's robot could quickly localize itself after being tele-operated in the student's world, or given nav_goal target.
-
+### Tasks 
+* Student's map should contain at least 3 loop closures and the occupancy grid is identifiable
+* ROS Package: robot and RTABMAP
+* Db file generated (could be link to file if oversized)
 
 ### Folder contents
 
 * [Map-My-World](https://github.com/scifiswapnil/Udacity-Robotics-ND/tree/master/Map-My-World)
     * catkin_ws 
         * src 
-            * pgm_map_creator - pgm_map_creator package
-                * maps - contains updated map
-                * world - contains updated world
             * my_robot - robot model and gazebo world
-                * world - contains gazebo world file
+                * worlds - contains gazebo world file
                 * models - contains mesh models
+                * maps - Collected maps 
+                * rviz - rviz configuration file
+                * config - pkg configuration files
                 * launch 
                     * movebase.launch - movebase params and node
                     * mapserver.launch - mapserver params and node
                     * amcl.launch - - amcl params and node
                     * world.launch - primary launch file
                     * robot_description.launch - robot description
-    * screenshots - assignment screenshots
+                    * localization.launch - RTABMAP for localization 
+                    * mappging.launch - RTABMAP for mapping 
+                    * rtabmap_viz.launch - RTABMAP visualizer  
+    * pictures - assignment screenshots
             
+### Screenshots 
+
+Basic Gazebo World         |  Mapped using RTABMAP
+:-------------------------:|:-------------------------:
+![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Map-My-World/pictures/world_gazebo.png)  |  ![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Map-My-World/pictures/world_map_3d.png)
+
+Gazebo World with loops    |  Mapped using RTABMAP
+:-------------------------:|:-------------------------:
+![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Map-My-World/pictures/loop_world_gazebo.png)  |  ![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Map-My-World/pictures/loop_world_map_3d.png)
+
+### RTABMAP database files 
+
+Basic gazebo World : [Google Drive link](https://drive.google.com/file/d/1-AN5KGv-7xNWNLgWHd8p9uzGiajlNyih/view?usp=sharing)
+
+Gazebo World with loops : [Google Drive link](https://drive.google.com/file/d/1ZY6xa8jYTW083mPvd_phDHyVDWCJNyIT/view?usp=sharing)
+
+**Note : Recommended to download the files, rename to rtabmap.db and paste in "~/Udacity-Robotics-ND/Map-My-World/catkin_ws/src/my_robot/map" to avoid changes in launch files**
 
 ### Installation 
 
-* Map-My-World
+**Note : Need to install Dependencies before use** 
 
+Dependencies
+
+``` sudo apt install ros-kinetic-rtabmap ros-kinetic-rtabmap-ros```
+
+Build the workspace after installation of dependencies : 
+
+```
+cd ~/Udacity-Robotics-ND/Map-My-World/catkin_ws
+catkin_make
+source devel/setup.bash
+```
+
+For Mapping :
+
+``` 
+roslaunch my_robot mapping.launch
+```
+
+For Localization : 
+
+``` 
+roslaunch my_robot localization.launch
+```
+For teleop :
+
+``` 
+roslaunch my_robot teleop.launch
+```
 
