@@ -3,6 +3,7 @@
 # Map My World
 This project is about creating a 2D occupancy grid and 3D octomap from a simulated environment using our own robot with the RTAB-Map package.
 
+
 ### Tasks 
 * Student's map should contain at least 3 loop closures and the occupancy grid is identifiable
 * ROS Package: robot and RTABMAP
