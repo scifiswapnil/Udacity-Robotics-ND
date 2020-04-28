@@ -9,12 +9,10 @@ This is the submissions repository for the Robotics NanoDegree(ND-209) course at
 * [Go-Chase-It](https://github.com/scifiswapnil/Udacity-Robotics-ND/tree/master/Go-Chase-It)
 * [Where-Am-I](https://github.com/scifiswapnil/Udacity-Robotics-ND/tree/master/Where-Am-I)
 * [Map-My-World](https://github.com/scifiswapnil/Udacity-Robotics-ND/tree/master/Map-My-World)
+* [Home-Service-Robot](https://github.com/scifiswapnil/Udacity-Robotics-ND/tree/master/Home-Service-Robot)
 
 **Note** : 
 Follow submission Readme in the respective folders. 
-
-
-
 
 ### License 
 BSD - Clause 2 
