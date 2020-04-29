@@ -26,6 +26,7 @@ int main(int argc, char** argv){
 
   if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
   {
+    sleep(5);
     ROS_INFO("Reached Pick Up location");
     goal.target_pose.header.frame_id = "map";
     goal.target_pose.header.stamp = ros::Time::now();
