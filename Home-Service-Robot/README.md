@@ -54,7 +54,17 @@ Gazebo World with loops : [Google Drive link](https://drive.google.com/file/d/1Z
 
 Dependencies
 
-``` sudo apt install ros-kinetic-rtabmap ros-kinetic-rtabmap-ros```
+```
+   sudo apt update
+   sudo apt upgrade
+   sudo apt install scrot libignition-math2-dev protobuf-compiler xterm
+   sudo apt install ros-kinetic-rtabmap ros-kinetic-rtabmap-ros
+   sudo apt install ros-kinetic-map-server  ros-kinetic-move-base ros-kinetic-navigation ros-kinetic-amcl 
+   sudo apt install ros-kinetic-gazebo-ros-control  ros-kinetic-joint-state ros-kinetic-joint-state-controller ros-kinetic-effort-controllers 
+   sudo apt install ros-kinetic-velocity-controllers  ros-kinetic-openslam-gmapping ros-kinetic-joy ros-kinetic-kobuki-description
+   sudo apt install ros-kinetic-yocs-*
+   sudo apt install ros-kinetic-kobuki*
+```
 
 Build the workspace after installation of dependencies : 
 
