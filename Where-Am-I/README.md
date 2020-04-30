@@ -1,7 +1,8 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 # Where Am I
-This is the submissions repository for the Robotics NanoDegree(ND-209) course at Udacity. Following you will find folder-wise projects submitted during the course. This is an ongoing course that will continue till May 2020.
+
+This project is about implementation of AMCL package on a custom developed robot in gazebo simulation.
 
 ### Tasks 
 
@@ -35,6 +36,13 @@ This is the submissions repository for the Robotics NanoDegree(ND-209) course at
                     * robot_description.launch - robot description
     * screenshots - assignment screenshots
             
+            
+### Screenshots 
+
+Rviz convergence of particles        |  robot with AMCL running
+:-------------------------:|:-------------------------:
+![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Where-Am-I/pictures/amcl_ss_1.png)  |  ![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Where-Am-I/pictures/amcl_ss_2.png)
+
 
 ### Installation 
 
