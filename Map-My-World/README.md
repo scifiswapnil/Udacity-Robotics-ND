@@ -48,7 +48,7 @@ Gazebo World with loops : [Google Drive link](https://drive.google.com/file/d/1Z
 
 **Note :** *Recommended to download the files, rename to rtabmap.db and paste in "~/Udacity-Robotics-ND/Map-My-World/catkin_ws/src/my_robot/map" to avoid changes in launch files*
 
-### Installation 
+### Installation and execution
 
 **Note :** *Need to install Dependencies before use.*
 

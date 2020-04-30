@@ -2,14 +2,23 @@
 
 # Build My World
 
+This project is about creating a gazebo world and a model of robot with joints.
+
 ### Folder contents
 
 * [Build-My-World](https://github.com/scifiswapnil/Udacity-Robotics-ND/tree/master/Build-My-World)
     * model - gazebo building and model files
     * script - simple gazebo plugin files
     * world - gazebo world files
+    * pictures - screenshots of the model and world
 
-### Specifications 
+### Screenshots 
+
+Gazebo World         |  Gazebo robot model
+:-------------------------:|:-------------------------:
+![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Build-My-World/pictures/world.png)  |  ![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Build-My-World/pictures/robots.png)
+
+### Tasks 
 
 * Building 
     * Structure is different than the one shown in the sample simulation world.
@@ -28,7 +37,8 @@
 * Plugin Requirement 
     * The plugin C++ code should print “Welcome to Swapnil’s World!” message.
 
-### Installation 
+### Installation and execution
+
 * Build-My-world 
     ```
     cd ~/Udacity-Robotics-ND/Build-My-Work/
@@ -37,4 +47,6 @@
     make
     export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/Udacity-Robotics-ND/Build-My-Work/build
     export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/Udacity-Robotics-ND/Build-My-Work/model
+    cd world 
+    gazebo world.world.
     ```

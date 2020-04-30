@@ -1,8 +1,8 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 # Go Chase It 
-This is the submissions repository for the Robotics NanoDegree(ND-209) course at Udacity. Following you will find folder-wise projects submitted during the course. This is an ongoing course that will continue till May 2020.
 
+This project is about development of a robot with gazebo plugins that can track and follow a white colored ball in the gazebo world. 
 
 ### Folder contents
 
@@ -12,7 +12,13 @@ This is the submissions repository for the Robotics NanoDegree(ND-209) course at
             * ball_chaser - package for ball chasing codes
             * my_robot - robot model and gazebo world           
             
-### Specification 
+### Screenshots 
+
+Gazebo World         |  Gazebo robot model
+:-------------------------:|:-------------------------:
+![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Go-Chase-It/pictures/robot1.png)  |  ![](https://github.com/scifiswapnil/Udacity-Robotics-ND/blob/master/Go-Chase-It/pictures/ball_follower.png)
+
+### Tasks 
 
 * Robot model 
     * Lidar and camera sensors.
@@ -53,6 +59,6 @@ This is the submissions repository for the Robotics NanoDegree(ND-209) course at
     catkin_make
     source devel/setup.bash
     export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/Udacity-Robotics-ND/Go-Chase-It/catkin_ws/src/my_robot/models/
-    roslaunch my_robot world.launch
+    roslaunch my_robot world.launch &
     roslaunch ball_chaser ball_chaser.launch
     ```
